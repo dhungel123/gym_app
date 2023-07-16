@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gym_app/core/constants/app_string.dart';
-import 'package:gym_app/core/constants/app_style.dart';
-
+import 'package:gym_app/feature/store_page/presentation/widgets/store_block.dart';
 import '../../../core/constants/app_images.dart';
 
 class StorePage extends StatelessWidget {
@@ -37,10 +36,13 @@ class StorePage extends StatelessWidget {
             Row(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 12),
+                  padding: EdgeInsets.only(left: 12, top: 12),
                   child: Text(
                     AppString.store,
-                    style:   TextStyle(fontWeight: FontWeight.bold, fontSize: 32,color: Colors.black87),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 32,
+                        color: Colors.black87),
                   ),
                 ),
               ],
@@ -48,89 +50,30 @@ class StorePage extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 8, right: 8),
-              child: Container(
-                height: 200,
-                width: double.maxFinite,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(12.0),
-                  child: Stack(
-                    children: [
-                      Image.network(AppImages.trainingPlan,),
-                      Positioned(
-                          bottom: 24,
-                          left: 48,
-                          child: Text(
-                            AppString.trainingPlan,
-                            style:  TextStyle(fontWeight: FontWeight.bold, fontSize: 32,color: Colors.white),
-                          ))
-                    ],
-                  ),
-                ),
-              ),
+            StoreBlock(
+              textName: AppString.trainingPlan,
+              imagePath: AppImages.trainingPlan,
             ),
             SizedBox(
               height: 16,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 8, right: 8),
-              child: Stack(
-                children: [
-                  Image.network(AppImages.mealPlan),
-                  Positioned(
-                      bottom: 24,
-                      left: 48,
-                      child: Text(
-                        AppString.mealPlan,
-                        style:  TextStyle(fontWeight: FontWeight.bold, fontSize: 32,color: Colors.white),
-                      ))
-                ],
-              ),
-            ),
+            StoreBlock(
+                textName: AppString.mealPlan, imagePath: AppImages.mealPlan),
             SizedBox(
               height: 16,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 8, right: 8),
-              child: Stack(
-                children: [
-                  Image.network(AppImages.supplementPlan),
-                  Positioned(
-                      bottom: 24,
-                      left: 48,
-                      child: Text(
-                        AppString.supplementaryPlan,
-                        style:  TextStyle(fontWeight: FontWeight.bold, fontSize: 32,color: Colors.white),
-                      ))
-                ],
-              ),
-            ),
+            StoreBlock(
+                textName: AppString.supplementaryPlan,
+                imagePath: AppImages.supplementPlan),
             SizedBox(
               height: 16,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 8, right: 8),
-              child: Stack(
-                children: [
-                  Image.network(AppImages.workOutPlan),
-                  Positioned(
-                      bottom: 24,
-                      left: 48,
-                      child: Text(
-                        AppString.workoutPlan,
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32,color: Colors.white),
-                      ))
-                ],
-              ),
-            ),
+            StoreBlock(
+                textName: AppString.workoutPlan,
+                imagePath: AppImages.workOutPlan),
             SizedBox(
               height: 16,
             ),
-            Container(
-              decoration: BoxDecoration(
-                  color: Colors.blue, borderRadius: BorderRadius.circular(21)),
-            )
           ],
         ),
       ),

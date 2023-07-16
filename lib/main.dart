@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:gym_app/feature/store_page/presentation/first_screen.dart';
 
 import 'feature/store_page/presentation/store_page.dart';
 
@@ -18,7 +19,7 @@ class GymApp extends StatelessWidget{
         )
       ),
       debugShowCheckedModeBanner: false,
-      home: StorePage(),
+      home: FirstScreen(),
     );
 
   }
